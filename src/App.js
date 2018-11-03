@@ -25,7 +25,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View flex center bg-dark20>
-        <Text center white text40 marginB-10>Welcome to React Native Skeleton!</Text>
+        <Text center white text40 marginB-10>{'Welcome to React Native\n💀 Skeleton 💀'}</Text>
         <Text center white text70 marginB-10>To get started, edit App.js</Text>
         <Text center white text70 marginB-10>{instructions}</Text>
         <Text center white text60>{details}</Text>
