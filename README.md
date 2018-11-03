@@ -11,27 +11,26 @@ react-native run-ios
 ```
 
 ### Project Structure
-
 ```
 .
 ├── index.js            
 ├── src
 │	├── App.js
 │	├── screens
-│		├── Welcome.js
-│		├── ...
+│	│	├── Welcome.js
+│	│	└── ...
 │	├── stores 
-│		├── store.js
-│		├── store.test.js
-│		├── actions.js
-│		├── actions.test.js
-│		├── ...
-│	├── services           
+│	│	├── store.js
+│	│	├── store.test.js
+│	│	├── actions.js
+│	│	├── actions.test.js
+│	│	└-─ ...
+│	└── services           
 │		├── HttpService.js
 │		├── HttpService.test.js
-│		├── ...
-│	├── e2e
-│		├── Welcome.e2e.js
-│		├── ...
-└── README.md
+│		└── ...
+├── e2e
+│	├── Welcome.e2e.js
+│	└── ...
+└── package.json
 ```
