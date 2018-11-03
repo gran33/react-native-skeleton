@@ -9,16 +9,4 @@
 import {Navigation} from "react-native-navigation";
 require('./src/App');
 
-Navigation.events().registerAppLaunchedListener(() => {
-  Navigation.setRoot({
-    root: {
-      stack: {
-        children: [{
-          component: {
-            name: "skeleton.welcome"
-          }
-        }]
-      }
-    }
-  });
-});
+

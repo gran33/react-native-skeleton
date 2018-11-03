@@ -6,11 +6,21 @@
  * @flow
  */
 
-import {AppRegistry} from 'react-native';
 import {registerScreens} from './screens';
-import Welcome from "./screens/Welcome";
+import {Navigation} from 'react-native-navigation/lib/dist/index';
 
-
-AppRegistry.registerComponent('skeleton.welcome', () => Welcome);
 registerScreens();
 
+Navigation.events().registerAppLaunchedListener(() => {
+  Navigation.setRoot({
+    root: {
+      stack: {
+        children: [{
+          component: {
+            name: "skeleton.welcome"
+          }
+        }]
+      }
+    }
+  });
+});
