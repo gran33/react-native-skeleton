@@ -16,22 +16,22 @@ react-native run-ios
 .
 ├── index.js            
 ├── src
-|	├── App.js
-|	├── screens
-|		├── Welcome.js
-|		├── ...
-|	├── stores 
-|		├── store.js
-|		├── store.test.js
-|		├── actions.js
-|		├── actions.test.js
-|		├── ...
-|	├── services           
-|		├── HttpService.js
-|		├── HttpService.test.js
-|		├── ...
-|	├── e2e
-|		├── Welcome.e2e.js
-|		├── ...
+│	├── App.js
+│	├── screens
+│		├── Welcome.js
+│		├── ...
+│	├── stores 
+│		├── store.js
+│		├── store.test.js
+│		├── actions.js
+│		├── actions.test.js
+│		├── ...
+│	├── services           
+│		├── HttpService.js
+│		├── HttpService.test.js
+│		├── ...
+│	├── e2e
+│		├── Welcome.e2e.js
+│		├── ...
 └── README.md
 ```
