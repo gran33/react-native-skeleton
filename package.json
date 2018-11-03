@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
+    "test": "jest --coverage",
     "xcode": "open ios/ReactNativeSkeleton.xcodeproj",
     "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
     "androidStudio": "open ios/ReactNativeSkeleton.xcodeproj"
@@ -24,5 +24,18 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "collectCoverageFrom": [
+    "src/**/*.js",
+    "!src/screens/**/*.js",
+    "!src/**/*.e2e.js"
+  ],
+  "coverageThreshold": {
+    "global": {
+      "branches": 100,
+      "functions": 100,
+      "lines": 100,
+      "statements": 100
+    }
   }
 }
