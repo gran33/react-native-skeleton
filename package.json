@@ -7,7 +7,7 @@
     "test": "jest --coverage",
     "xcode": "open ios/ReactNativeSkeleton.xcodeproj",
     "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
-    "androidStudio": "open ios/ReactNativeSkeleton.xcodeproj"
+    "androidStudio": "open -a /Applications/'Android Studio.app' ./android"
   },
   "dependencies": {
     "react": "16.6.0-alpha.8af6728",
