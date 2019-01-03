@@ -10,7 +10,6 @@ git clone https://github.com/gran33/react-native-skeleton.git
 cd react-native-skeleton
 npm install
 react-native run-ios
-
 ```
 
 ### What's inside?
