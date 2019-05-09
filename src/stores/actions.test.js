@@ -11,7 +11,10 @@ describe('Describe tests', () => {
   });
 
   it('should push show me more screen', async () => {
-    expect(true).toBe(true);
+    const componentId = 'comp_123';
+
+    uut.pushShowMeMoreScreen(componentId);
+    expect(mockNavigation.push).toHaveBeenCalled();
   });
 
 });
