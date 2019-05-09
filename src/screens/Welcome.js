@@ -41,7 +41,7 @@ export default class Welcome extends Component<Props> {
 
   render() {
     return (
-      <View flex center bg-dark20>
+      <View flex center bg-dark20 testID={'welcomeScreen'}>
         {this.renderText('Welcome to React Native\n💀 Skeleton 💀')}
         {this.renderText('To get started, edit App.js')}
         <Text center white text60>{details}</Text>
