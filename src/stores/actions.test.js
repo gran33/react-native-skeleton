@@ -1,11 +1,15 @@
 describe('Describe tests', () => {
 
-  let uut, mockNavigation;
+  let uut, mockNavigation, mockStore, mockLaunchService;
 
   beforeEach(() => {
     jest.mock('react-native-navigation');
+    jest.mock('./store');
+    jest.mock('../services/launches');
 
     mockNavigation = require('react-native-navigation').Navigation;
+    mockLaunchService = require('../services/launches');
+    mockStore= require('./store');
 
     uut = require('./actions');
   });
@@ -17,4 +21,13 @@ describe('Describe tests', () => {
     expect(mockNavigation.push).toHaveBeenCalled();
   });
 
+  it('should get launches', async () => {
+    const launchWithImage = {id: 2, imageURL: 'http://image.com'};
+    const launches = [{id: 1}, launchWithImage];
+    mockLaunchService.getLaunches.mockReturnValueOnce(launches);
+
+    await  uut.getLaunches();
+    expect(mockStore.setLoading).toHaveBeenCalledWith(true);
+    expect(mockStore.setLaunches).toHaveBeenCalledWith([launchWithImage]);
+  });
 });

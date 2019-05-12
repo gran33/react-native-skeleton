@@ -17,7 +17,7 @@ Navigation.events().registerAppLaunchedListener(() => {
       stack: {
         children: [{
           component: {
-            name: "skeleton.welcome"
+            name: "skeleton.demo.welcome"
           }
         }]
       }

@@ -1,0 +1,9 @@
+{
+  "WELCOME_SCREEN": "welcome-screen",
+  "WELCOME_CTA": "welcome-screen-cta",
+  "WELCOME_CTA_EMPTY": "welcome-screen-cta-empty",
+  "LAUNCHES_CTA": "launches-screen-cta",
+  "LAUNCHES_LIST_SCREEN": "launches-screen-list",
+  "LAUNCHES_PRIMING_SCREEN": "launches-screen-priming",
+  "LAUNCHES_LOADING_SCREEN": "launches-screen-loading"
+}

@@ -1,8 +1,11 @@
+
 const { Navigation } = require('react-native-navigation');
-import Welcome from './Welcome';
+import WelcomeDemo from "./WelcomeDemo";
+import ListScreen from "./ListScreen";
 
 function registerScreens() {
-  Navigation.registerComponent('skeleton.welcome', () => Welcome);
+  Navigation.registerComponent('skeleton.demo.welcome', () => WelcomeDemo);
+  Navigation.registerComponent('skeleton.demo.list', () => ListScreen);
 }
 
 module.exports = {

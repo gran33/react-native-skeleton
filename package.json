@@ -5,11 +5,13 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest --coverage",
+    "test-e2e-ios": "detox test",
     "xcode": "open ios/ReactNativeSkeleton.xcodeproj",
     "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
     "androidStudio": "open -a /Applications/'Android Studio.app' ./android"
   },
   "dependencies": {
+    "lodash": "^4.17.11",
     "react": "16.8.3",
     "react-native": "0.59.x",
     "react-native-navigation": "^2.0.2638",
@@ -51,22 +53,16 @@
     "moduleNameMapper": {
       "^[./a-zA-Z0-9$_-]+\\.png$": "RelativeImageStub"
     },
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/screens/**/*.js",
+      "!src/**/*.e2e.js",
+      "!src/App.js",
+      "!src/Config.js"
+    ],
     "resetMocks": true,
     "resetModules": true,
     "preset": "react-native"
-  },
-  "collectCoverageFrom": [
-    "src/**/*.js",
-    "!src/screens/**/*.js",
-    "!src/**/*.e2e.js"
-  ],
-  "coverageThreshold": {
-    "global": {
-      "branches": 100,
-      "functions": 100,
-      "lines": 100,
-      "statements": 100
-    }
   },
   "detox": {
     "configurations": {
