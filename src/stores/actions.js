@@ -11,29 +11,13 @@ export function pushShowMeMoreScreen(componentId) {
   });
 }
 
-// export async function getLaunches() {
-//   store.setLoading(true);
-//
-//   const launches = await LaunchesService.getLaunches();
-//   const launchesWithImages = _.filter(launches, 'imageURL');
-//
-//   store.setLaunches(launchesWithImages);
-//   store.setLoading(false);
-// }
-
-
-export async function getLaunches({isEmpty} = {}) {
-  let launches;
-
+export async function getLaunches() {
   store.setLoading(true);
 
-  if (isEmpty) {
-    launches = await LaunchesService.getLaunches({limit: 0});
-  } else {
-    launches = await LaunchesService.getLaunches();
-  }
+  const launches = await LaunchesService.getLaunches();
   const launchesWithImages = _.filter(launches, 'imageURL');
 
   store.setLaunches(launchesWithImages);
   store.setLoading(false);
 }
+

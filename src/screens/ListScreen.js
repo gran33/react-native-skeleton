@@ -79,7 +79,6 @@ class ListScreen extends Component<Props> {
 
   }
 
-
   render() {
     if (this.props.isLoading) {
       return (
