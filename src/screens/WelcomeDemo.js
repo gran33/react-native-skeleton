@@ -16,7 +16,6 @@ export default class WelcomeDemo extends Component<Props> {
     return (
       <Text center white text40 marginB-40>{`${text}`}</Text>
     );
-
   }
 
   render() {

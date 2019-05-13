@@ -27,6 +27,7 @@ describe('Describe tests', () => {
     mockLaunchService.getLaunches.mockReturnValueOnce(launches);
 
     await  uut.getLaunches();
+    expect(mockLaunchService.getLaunches).toHaveBeenCalled();
     expect(mockStore.setLoading).toHaveBeenCalledWith(true);
     expect(mockStore.setLaunches).toHaveBeenCalledWith([launchWithImage]);
   });

@@ -5,8 +5,8 @@ export const ERRORS = {
   FAILED_TO_FETCH_LAUNCHES_LIST_API: 'Failed to fetch launches list - API Error',
 };
 
-export async function getLaunches() {
-  const url = CONFIG.endpoints['get-launches'];
+export async function getLaunches({limit} = {}) {
+  const url = limit === 0 ? CONFIG.endpoints['get-empty-launches'] : CONFIG.endpoints['get-launches'];
   try {
     const response = await Http.get(url);
     return response.rockets;

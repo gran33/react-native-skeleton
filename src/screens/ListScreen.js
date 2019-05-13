@@ -24,6 +24,11 @@ class ListScreen extends Component<Props> {
     actions.getLaunches();
   };
 
+  onEmptyButtonPress = () => {
+    actions.getLaunches({isEmpty: true});
+  };
+
+
   keyExtractor = item => item.name;
 
   renderPrimingView() {
@@ -36,6 +41,13 @@ class ListScreen extends Component<Props> {
           marginT-60
           label={STRINGS.PRIMING_CTA}
           onPress={this.onButtonPress}
+        />
+
+        <Button
+          testID={TestIDs.LAUNCHES_CTA_EMPTY}
+          marginT-60
+          label={STRINGS.PRIMING_EMPTY_CTA}
+          onPress={this.onEmptyButtonPress}
         />
 
       </View>
@@ -79,6 +91,15 @@ class ListScreen extends Component<Props> {
 
   }
 
+  renderEmptyView() {
+    return (
+      <View flex center testID={TestIDs.LAUNCHES_PRIMING_SCREEN}>
+        <Text text20>{STRINGS.PRIMING_TITLE_EMPTY}</Text>
+        <Text text40>{STRINGS.PRIMING_SUBTITLE_EMPTY}</Text>
+      </View>
+    );
+  }
+
   render() {
     if (this.props.isLoading) {
       return (
@@ -89,7 +110,11 @@ class ListScreen extends Component<Props> {
     }
 
     if (this.props.showPriming) {
-       return this.renderPrimingView();
+      return this.renderPrimingView();
+    }
+
+    if (this.props.showEmpty) {
+      return this.renderEmptyView();
     }
 
     return (
@@ -106,6 +131,8 @@ function mapStateToProps() {
     isLoading: store.isLoading(),
     launches: store.getLaunches(),
     showPriming: store.shouldShowPriming(),
+    showEmpty: store.shouldShowEmptyView()
+
   };
 }
 

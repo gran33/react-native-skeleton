@@ -11,13 +11,18 @@ export function pushShowMeMoreScreen(componentId) {
   });
 }
 
-export async function getLaunches() {
+export async function getLaunches({isEmpty} = {}) {
+  let launches;
+
   store.setLoading(true);
 
-  const launches = await LaunchesService.getLaunches();
+  if (isEmpty) {
+    launches = await LaunchesService.getLaunches({limit: 0});
+  } else {
+    launches = await LaunchesService.getLaunches();
+  }
   const launchesWithImages = _.filter(launches, 'imageURL');
 
   store.setLaunches(launchesWithImages);
   store.setLoading(false);
 }
-
