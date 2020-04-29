@@ -7,11 +7,20 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "xcode": "open ios/Skeleton.xcworkspace",
+    "androidStudio": "open -a /Applications/Android\\ Studio.app ./android"
   },
   "dependencies": {
+    "@react-native-community/blur": "^3.6.0",
+    "@react-native-community/datetimepicker": "^2.3.2",
+    "@react-native-community/netinfo": "^5.8.0",
     "react": "16.11.0",
-    "react-native": "0.62.2"
+    "react-native": "0.62.2",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-navigation": "^6.5.0",
+    "react-native-reanimated": "^1.8.0",
+    "react-native-ui-lib": "^5.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

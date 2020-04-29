@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '10.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 def add_flipper_pods!(versions = {})
@@ -77,10 +77,8 @@ target 'Skeleton' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'SkeletonTests' do
-    inherit! :complete
-    # Pods for testing
-  end
+  pod 'ReactNativeNavigation', :podspec => '../node_modules/react-native-navigation/ReactNativeNavigation.podspec'
+
 
   use_native_modules!
 
@@ -91,14 +89,5 @@ target 'Skeleton' do
   add_flipper_pods!
   post_install do |installer|
     flipper_post_install(installer)
-  end
-end
-
-target 'Skeleton-tvOS' do
-  # Pods for Skeleton-tvOS
-
-  target 'Skeleton-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
   end
 end
