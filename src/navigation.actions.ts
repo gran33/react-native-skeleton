@@ -1,7 +1,7 @@
-import { Navigation } from 'react-native-navigation';
+import {Navigation} from 'react-native-navigation';
 import Root from "./screens/root.screen";
 
-export function startApplication() {
+function startApplication(): void {
   Navigation.setRoot({
     root: {
       stack: {
